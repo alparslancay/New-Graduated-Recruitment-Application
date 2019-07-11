@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Member_Classes
 {
-    public class MemberStudent
+    public class MemberStudent : MemberLoginInformationADT
     {
+        public int SystemID { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Member_Classes
 {
-    class CompanyManager
+    public class CompanyManager : MemberLoginInformationADT
     {
     }
 }
