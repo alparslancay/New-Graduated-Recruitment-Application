@@ -14,5 +14,6 @@ namespace EntityLayer.Information_Classes
         PersonelInformation personelInformation;
         List<VolunteerInformation> volunteerInformations;
         List<InternCompany> internCompanies;
+        List<BusinessOfferInformation> businessOffers;
     }
 }

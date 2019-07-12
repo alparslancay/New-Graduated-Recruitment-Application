@@ -12,5 +12,6 @@ namespace EntityLayer.Information_Classes
         public string Hobies { get; set; }
         public string Description { get; set; }
         public string AdditionalInformation { get; set; }
+        public string KnowledgeEnglish { get; set; }
     }
 }

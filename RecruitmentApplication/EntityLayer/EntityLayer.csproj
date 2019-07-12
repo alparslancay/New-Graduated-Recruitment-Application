@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Information Classes\BusinessOfferInformation.cs" />
     <Compile Include="Information Classes\ContactInformation.cs" />
     <Compile Include="Information Classes\DepartmentInformation.cs" />
     <Compile Include="Information Classes\IDInformation.cs" />

@@ -11,5 +11,6 @@ namespace EntityLayer.Information_Classes
         public int ID { get; set; }
         public string AssociationName { get; set; }
         public string Description { get; set; }
+        public int StudentID { get; set; }
     }
 }
