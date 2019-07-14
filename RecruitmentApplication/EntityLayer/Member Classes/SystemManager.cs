@@ -8,5 +8,7 @@ namespace EntityLayer.Member_Classes
 {
     public class SystemManager : MemberLoginInformationADT
     {
+        public string IsAccepted { get; set; }
+        public string RegisterDescription { get; set; }
     }
 }

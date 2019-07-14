@@ -8,6 +8,7 @@ namespace EntityLayer.Member_Classes
 {
     public class MemberStudent : MemberLoginInformationADT
     {
-        public int SystemID { get; set; }
+        public string IsAccepted { get; set; }
+        public string RegisterDescription { get; set; }
     }
 }
