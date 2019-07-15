@@ -8,12 +8,12 @@ namespace EntityLayer.Information_Classes
 {
     public class StudentInformation
     {
-        List<DepartmentInformation> schoolDepartments;
-        IDInformation identificationInformation;
-        ContactInformation contactInformation;
-        PersonelInformation personelInformation;
-        List<VolunteerInformation> volunteerInformations;
-        List<InternCompany> internCompanies;
-        List<BusinessOfferInformation> businessOffers;
+        public List<DepartmentInformation> schoolDepartments;
+        public IDInformation identificationInformation;
+        public ContactInformation contactInformation;
+        public PersonelInformation personelInformation;
+        public List<VolunteerInformation> volunteerInformations;
+        public List<InternCompany> internCompanies;
+        public List<BusinessOfferInformation> businessOffers;
     }
 }
