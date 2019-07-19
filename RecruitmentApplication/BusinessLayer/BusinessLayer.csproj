@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Hash.cs" />
+    <Compile Include="HashNode.cs" />
     <Compile Include="HeapGPA.cs" />
     <Compile Include="HeapKnowledgeEnglish.cs" />
     <Compile Include="HeapKnowledgeEnglishGPA.cs" />
