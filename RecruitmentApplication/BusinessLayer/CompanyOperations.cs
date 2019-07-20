@@ -106,13 +106,13 @@ namespace BusinessLayer
             {
                 StudentInformation studentInformation = new StudentInformation();
 
-                studentInformation.businessOffers = TakeStudentOffers(numberRecorder,businessOfferInformations);
+                studentInformation.businessOffers = GetStudentOffers(numberRecorder,businessOfferInformations);
                 studentInformation.contactInformation = contactInformations[numberRecorder];
                 studentInformation.identificationInformation = IDInformations[numberRecorder];
-                studentInformation.internCompanies = TakeStudentIntern(numberRecorder,internCompanies);
+                studentInformation.internCompanies = GetStudentIntern(numberRecorder,internCompanies);
                 studentInformation.personelInformation = personelInformations[numberRecorder];
-                studentInformation.schoolDepartments = TakeSchoolInformation(numberRecorder,schoolDepartmentInformations);
-                studentInformation.volunteerInformations = TakeStudentVolunteer(numberRecorder,volunteerInformations);
+                studentInformation.schoolDepartments = GetSchoolInformation(numberRecorder,schoolDepartmentInformations);
+                studentInformation.volunteerInformations = GetStudentVolunteer(numberRecorder,volunteerInformations);
 
                 studentList.Add(studentInformation);
 
@@ -121,28 +121,28 @@ namespace BusinessLayer
             return studentList;
         }
 
-        private List<BusinessOfferInformation> TakeStudentOffers(int studentID, List<BusinessOfferInformation> studentsOffers)
+        private List<BusinessOfferInformation> GetStudentOffers(int studentID, List<BusinessOfferInformation> studentsOffers)
         {
             bool offersOfStudent(BusinessOfferInformation offer) => offer.StudentID == studentID;
 
             return studentsOffers.FindAll(offersOfStudent);
         }
 
-        private List<InternCompany> TakeStudentIntern(int studentID, List<InternCompany> studentInterns)
+        private List<InternCompany> GetStudentIntern(int studentID, List<InternCompany> studentInterns)
         {
             bool internOfStudent(InternCompany intern) => intern.StudentID == studentID;
 
             return studentInterns.FindAll(internOfStudent);
         }
 
-        private List<DepartmentInformation> TakeSchoolInformation(int studentID, List<DepartmentInformation> studentsDeparments)
+        private List<DepartmentInformation> GetSchoolInformation(int studentID, List<DepartmentInformation> studentsDeparments)
         {
             bool deparmentsOfStudent(DepartmentInformation department) => department.StudentID == studentID;
 
             return studentsDeparments.FindAll(deparmentsOfStudent);
         }
 
-        private List<VolunteerInformation> TakeStudentVolunteer(int studentID, List<VolunteerInformation> studentsVolunteers)
+        private List<VolunteerInformation> GetStudentVolunteer(int studentID, List<VolunteerInformation> studentsVolunteers)
         {
             bool volunteerOfStudent(VolunteerInformation volunteer) => volunteer.StudentID == studentID;
 
@@ -164,7 +164,7 @@ namespace BusinessLayer
             return studentHash.ListSortedEnglish(departmentName);
         }
 
-        public List<StudentInformation> TakeListByDepartment(string departmentName)
+        public List<StudentInformation> GetListByDepartment(string departmentName)
         {
             return studentHash.ListByDepartment(departmentName);
         }

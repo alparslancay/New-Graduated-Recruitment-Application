@@ -13,7 +13,7 @@ namespace BusinessLayer
         List<StudentInformation> SortByGPA(string departmentName);
         List<StudentInformation> SortByKnowledgeEnglish(string departmentName);
         List<StudentInformation> SortByGPAEnglish(string departmentName);
-        List<StudentInformation> TakeListByDepartment(string departmentName);
+        List<StudentInformation> GetListByDepartment(string departmentName);
 
         bool OfferJob(StudentInformation offeredStudent, string offerText);
         bool RegisterSystem(string userName, string password);
