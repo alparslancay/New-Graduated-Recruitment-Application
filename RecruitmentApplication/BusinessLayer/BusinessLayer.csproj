@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompanyOperations.cs" />
+    <Compile Include="FactoryOperations.cs" />
     <Compile Include="Hash.cs" />
     <Compile Include="HashNode.cs" />
     <Compile Include="HeapGPA.cs" />
