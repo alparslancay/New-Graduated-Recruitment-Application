@@ -41,15 +41,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CompanyOperations.cs" />
     <Compile Include="Hash.cs" />
     <Compile Include="HashNode.cs" />
     <Compile Include="HeapGPA.cs" />
     <Compile Include="HeapKnowledgeEnglish.cs" />
     <Compile Include="HeapKnowledgeEnglishGPA.cs" />
+    <Compile Include="ICompanyOperations.cs" />
+    <Compile Include="ILoginController.cs" />
+    <Compile Include="IStudentOperations.cs" />
+    <Compile Include="ISystemManager.cs" />
+    <Compile Include="LoginController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentOperations.cs" />
+    <Compile Include="SystemManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{D929BE3D-54A7-41B6-8AFF-8BE32B222621}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
       <Project>{FC93048D-4DC5-48F7-AAB8-D80BBFF761B6}</Project>
       <Name>EntityLayer</Name>
