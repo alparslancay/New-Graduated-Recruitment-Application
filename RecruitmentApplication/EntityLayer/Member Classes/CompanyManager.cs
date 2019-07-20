@@ -8,5 +8,6 @@ namespace EntityLayer.Member_Classes
 {
     public class CompanyManager : MemberLoginInformationADT
     {
+        public bool IsAccepted;
     }
 }

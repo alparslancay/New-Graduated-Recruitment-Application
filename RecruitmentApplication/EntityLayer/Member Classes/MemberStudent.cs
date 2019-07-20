@@ -8,7 +8,7 @@ namespace EntityLayer.Member_Classes
 {
     public class MemberStudent : MemberLoginInformationADT
     {
-        public string IsAccepted { get; set; }
+        public bool IsAccepted { get; set; }
         public string RegisterDescription { get; set; }
     }
 }
