@@ -11,8 +11,8 @@ namespace BusinessLayer
     public interface IStudentOperations
     {
         bool EditInformation(StudentInformation studentInformation);
-        bool DeleteAccount(StudentInformation studentInformation);
+        bool DeleteAccount();
         bool RegisterSystem(MemberStudent memberStudent);
-        StudentInformation ViewStudentInformation(int studentID);
+        StudentInformation ViewStudentInformation();
     }
 }

@@ -15,22 +15,26 @@ namespace BusinessLayer
     {
         UnitOfWorkLogin LoginBase;
         UnitOfWorkInformation InformationBase;
+        MemberStudent memberStudent;
+        int studentID;
 
-        public StudentOperations()
+        public StudentOperations(MemberStudent memberStudent)
         {
             InformationBase = new UnitOfWorkInformation(new InformationDbContext("GratuatedInformationDb"));
             LoginBase = new UnitOfWorkLogin(new LoginDbContext("GratuatedLoginDb"));
+            this.memberStudent = memberStudent;
+            studentID = memberStudent.ID;
         }
 
-        public bool DeleteAccount(StudentInformation studentInformation)
+        public bool DeleteAccount()
         {
             try
             {
-
-                int studentID = studentInformation.identificationInformation.ID;
-
-                LoginBase.MemberStudent.Remove(LoginBase.MemberStudent.Get(studentID));
+                
+                LoginBase.MemberStudent.Remove(memberStudent);
                 LoginBase.Complete();
+
+                StudentInformation studentInformation = ViewStudentInformation();
 
                 InformationBase.ID.Remove(studentInformation.identificationInformation);
                 InformationBase.Contact.Remove(studentInformation.contactInformation);
@@ -89,44 +93,44 @@ namespace BusinessLayer
             }
         }
 
-        public StudentInformation ViewStudentInformation(int studentID)
+        public StudentInformation ViewStudentInformation()
         {
             StudentInformation studentInformation = new StudentInformation
             {
-                businessOffers = TakeStudentOffers(studentID),
+                businessOffers = GetStudentOffers(studentID),
                 contactInformation = InformationBase.Contact.Get(studentID),
                 identificationInformation = InformationBase.ID.Get(studentID),
-                internCompanies = TakeStudentIntern(studentID),
+                internCompanies = GetStudentIntern(studentID),
                 personelInformation = InformationBase.Personel.Get(studentID),
-                schoolDepartments = TakeSchoolInformation(studentID),
-                volunteerInformations = TakeStudentVolunteer(studentID)
+                schoolDepartments = GetSchoolInformation(studentID),
+                volunteerInformations = GetStudentVolunteer(studentID)
             };
 
             return studentInformation;
         }
 
-        private List<BusinessOfferInformation> TakeStudentOffers(int studentID)
+        private List<BusinessOfferInformation> GetStudentOffers(int studentID)
         {
             Expression<Func<BusinessOfferInformation,bool>> expression = offerStudents => offerStudents.StudentID == studentID;
 
             return InformationBase.Offers.Find(expression).ToList();
         }
 
-        private List<InternCompany> TakeStudentIntern(int studentID)
+        private List<InternCompany> GetStudentIntern(int studentID)
         {
             Expression<Func<InternCompany, bool>> expression = studentIntern => studentIntern.StudentID == studentID;
 
             return InformationBase.Intern.Find(expression).ToList();
         }
 
-        private List<DepartmentInformation> TakeSchoolInformation(int studentID)
+        private List<DepartmentInformation> GetSchoolInformation(int studentID)
         {
             Expression<Func<DepartmentInformation, bool>> expression = schoolDepartment => schoolDepartment.StudentID == studentID;
 
             return InformationBase.Department.Find(expression).ToList();
         }
 
-        private List<VolunteerInformation> TakeStudentVolunteer(int studentID)
+        private List<VolunteerInformation> GetStudentVolunteer(int studentID)
         {
             Expression<Func<VolunteerInformation, bool>> expression = studentVolunteer => studentVolunteer.StudentID == studentID;
 
