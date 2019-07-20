@@ -9,5 +9,6 @@ namespace DataAccessLayer.Repository_Interfaces.Information_Interfaces
 {
     public interface IRepositoryDepartment : IRepository<DepartmentInformation>
     {
+        void RemoveAll(int studentID);
     }
 }
