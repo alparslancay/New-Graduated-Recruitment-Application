@@ -1,4 +1,10 @@
 # New-Graduated-Recruitment-Application
+
+## Developers
+👤 |**[Alparslan ÇAY](https://github.com/alparslancay)**
+👤 |**[Cihan ÇİFCİ](https://github.com/cihancifci)**
+👤 |**[Neslihan KAYA](https://github.com/cihancifci)**
+
 The repository is for companies these will recruit new graduates.
 
 Students can:
